@@ -1,0 +1,11 @@
+{
+  "name": "eth-orb",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.0.0",
+    "@truffle/hdwallet-provider": "^1.2.3",
+    "fs": "^0.0.1-security"
+  }
+}
