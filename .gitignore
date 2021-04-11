@@ -15,3 +15,5 @@ build/contracts/IERC721Receiver.json
 build/contracts/Migrations.json
 build/contracts/Ownable.json
 build/contracts/Strings.json
+scripts/tests.js
+.apikey

@@ -5,6 +5,7 @@ const path = require("path");
 
 //prerequisite vars.
 const MNEMONIC = fs.readFileSync(".secret").toString().trim()
+const API_KEY = fs.readFileSync(".apikey").toString().trim()
 const OWNER_ADDRESS = "0xdd079a5B0CDa6707960197a6B195a436E3CE7836";
 const NFT_CONTRACT_ADDRESS = '0xf79349d03E0A2BfFD5Ea27B512D51Bd84289E72A';
 const NUM_ITEMS = 5;
@@ -19,7 +20,7 @@ async function main() {
   try {
     const provider = new HDWalletProvider(
       MNEMONIC,
-      `https://rpc-mumbai.maticvigil.com/v1/f7178baf2319f5704d765be9c095e1b9c94ceb1f`);
+      `https://rpc-mumbai.maticvigil.com/v1/${API_KEY}`  );
     const web3Instance = new web3(provider);
 
 

@@ -21,7 +21,7 @@
  const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const MNEMONIC = fs.readFileSync(".secret").toString().trim();
-
+const API_KEY = fs.readFileSync(".apikey").toString().trim()
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -42,7 +42,7 @@ module.exports = {
     },
     mumbai: {
       provider: function () {
-        return new HDWalletProvider(MNEMONIC, `https://rpc-mumbai.maticvigil.com/v1/f7178baf2319f5704d765be9c095e1b9c94ceb1f`);
+        return new HDWalletProvider(MNEMONIC, `https://rpc-mumbai.maticvigil.com/v1/${API_KEY}`);
       },
       network_id: 80001,
       confirmations: 2,
@@ -52,7 +52,7 @@ module.exports = {
     },
     matic: {
       provider: function () {
-        return new HDWalletProvider(MNEMONIC, `https://rpc-mainnet.maticvigil.com/v1/f7178baf2319f5704d765be9c095e1b9c94ceb1f`);
+        return new HDWalletProvider(MNEMONIC, `https://rpc-mainnet.maticvigil.com/v1/${API_KEY}`);
       },
       network_id: 137,
       gas: 5000000,
