@@ -5,16 +5,17 @@ pragma solidity ^0.8.0;
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
 
 contract GameItem is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    constructor() ERC721("GameItem", "GIM") {}
+    constructor() ERC721("Tales From The Stop", "ECZ") {}
 
-    //override.
-    function _baseURI() internal view virtual override returns (string memory) {
-        return "https://contract-abis.herokuapp.com/api/token/";
+
+    function concatenate(string memory s1, string memory s2, string memory s3) public pure returns (string memory) {
+        return string(abi.encodePacked(s1, s2, s3));
     }
 
     function totalSupply() public view returns (uint256) {
@@ -22,13 +23,8 @@ contract GameItem is ERC721URIStorage, Ownable {
     }
 
     //for opensea
-    function baseTokenURI() public pure returns (string memory) {
-        return "https://contract-abis.herokuapp.com/api/token/";
-    }
-
-    //for opensea
     function contractURI() public pure returns (string memory) {
-        return "https://contract-abis.herokuapp.com/api/contract/";
+        return "https://ipfs.io/ipfs/QmWLKVDtGD4KCbjjxgNBPBjo28aGG3auivdcgApS9XmMXh/";
     }
 
     function mintItem(address player, string memory tokenURI)

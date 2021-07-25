@@ -16,4 +16,5 @@ build/contracts/Migrations.json
 build/contracts/Ownable.json
 build/contracts/Strings.json
 scripts/tests.js
+arrayOfJsons
 .apikey
