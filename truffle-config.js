@@ -50,15 +50,6 @@ module.exports = {
       skipDryRun: true
 
     },
-    ropsten: {
-      provider: function () {
-        return new HDWalletProvider(MNEMONIC, `https://ropsten.infura.io/v3/${API_KEY}`);
-      },
-      network_id: 3,
-      confirmations: 2,
-      timeoutBlocks: 1000,
-      skipDryRun: true
-    },
     matic: {
       provider: function () {
         return new HDWalletProvider(MNEMONIC, `https://rpc-mainnet.maticvigil.com/v1/${API_KEY}`);
