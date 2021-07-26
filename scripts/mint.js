@@ -38,7 +38,7 @@ async function main() {
     );
 
 
-      //* just mint 1
+      //* just mint 
     await nftContract.methods
       .mintItem(OWNER_ADDRESS, `https://ipfs.io/ipfs/QmZ13J2TyXTKjjyA46rYENRQYxEKjGtG6qyxUSXwhJZmZt/5.json`)
       .send({ from: OWNER_ADDRESS }).then(console.log('minted')).catch(error => console.log(error));
